@@ -7,12 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Calculator.h"
+#import "Calculator+Squaring.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         char input;
         do {
-            printf("\n choose operation todo:\n \n 1. Add\n 2. Sub\n 3.Mul\n 4.Div\n");
+            printf("\n choose operation todo:\n \n 1. Add\n 2. Sub\n 3.Mul\n 4.Div\n 7.Square\n");
             scanf("%c", &input);
             double n1, n2, result;
             switch (input) {
@@ -40,6 +41,13 @@ int main(int argc, const char * argv[]) {
                     scanf("%lf %lf", &n1, &n2);
                     result = [Calculator divFirstNumber:n1 by:n2];
                     printf("%lf / %lf = %lf\n\n", n1, n2, result);
+                    break;
+                    
+                case '9':
+                    printf("Enter number to get its square: ");
+                    scanf("%lf", &n1);
+                    result = [Calculator square:n1];
+                    printf("%lf square = %lf\n\n", n1, result);
                     break;
                     
                 default:
